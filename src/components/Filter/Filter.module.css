@@ -1,0 +1,8 @@
+.inputFilter {
+  border-radius: 5px;
+}
+
+.findNameLabel {
+  display: flex;
+  gap: 10px;
+}
