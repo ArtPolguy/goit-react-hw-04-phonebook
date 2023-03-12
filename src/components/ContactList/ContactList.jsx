@@ -1,9 +1,11 @@
 import css from './ContactList.module.css';
 import PropTypes from 'prop-types';
+import { memo } from 'react';
 
 import ContactElement from '../ContactElement/ContactElement';
 
 const ContactList = ({ contacts, deleteContact }) => {
+  console.log('ContactList');
   return (
     <ul className={css.contactList}>
       {contacts.map(({ id, name, number }) => (
@@ -18,7 +20,7 @@ const ContactList = ({ contacts, deleteContact }) => {
     </ul>
   );
 };
-export default ContactList;
+export default memo(ContactList);
 
 ContactList.propTypes = {
   contacts: PropTypes.arrayOf(

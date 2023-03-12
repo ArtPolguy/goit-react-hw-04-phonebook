@@ -1,10 +1,11 @@
-import { useState } from 'react';
+import { useState, memo } from 'react';
 import { nanoid } from 'nanoid';
 
 import css from './ContactForm.module.css';
 import PropTypes from 'prop-types';
 
 const ContactForm = ({ onSubmit, isDublicate }) => {
+  console.log('ContactForm');
   const [state, setState] = useState({
     name: '',
     number: '',
@@ -66,7 +67,7 @@ const ContactForm = ({ onSubmit, isDublicate }) => {
   );
 };
 
-export default ContactForm;
+export default memo(ContactForm);
 
 ContactForm.propTypes = {
   onSubmit: PropTypes.func.isRequired,

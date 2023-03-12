@@ -1,7 +1,9 @@
 import css from './ContactElement.module.css';
 import PropTypes from 'prop-types';
+import { memo } from 'react';
 
 const ContactElement = ({ id, name, number, deleteContact }) => {
+  console.log('ContactElement');
   return (
     <li className={css.contactListItem} key={id}>
       <span>{name}: </span>
@@ -18,7 +20,7 @@ const ContactElement = ({ id, name, number, deleteContact }) => {
     </li>
   );
 };
-export default ContactElement;
+export default memo(ContactElement);
 
 ContactElement.propTypes = {
   id: PropTypes.string.isRequired,
